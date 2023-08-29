@@ -62,6 +62,6 @@ def combine_dat_files(pathIn, pathOut, type):
         except:
             pass
 
-    blob.to_csv(f'{pathOut}/blob-{type}.csv')
+    blob.to_csv(f'{pathOut}/blob{type}.csv')
 
     return blob

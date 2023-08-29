@@ -123,8 +123,8 @@ def showRec():
 cwd = os.getcwd()
 print(cwd)
 icoFile = f'{cwd}/Play.png'
-trcBlob = 'blob-Trc.csv'
-datBlob = 'blob-Dat.csv'
+trcBlob = 'blobTrc.csv'
+datBlob = 'blobDat.csv'
 entryPathWidth = 70
 
 root = Tk()

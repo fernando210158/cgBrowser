@@ -33,7 +33,12 @@ def combine_dat_files(pathIn, pathOut, type):
 
     prot = {'0': 'N/A', '1': 'ssl/tcp', '2': 'http', '3': 'quic', '4': 'ssl+', '5': 'quic+', '6': 'http+',
             '101': 'udp', '102': 'tcp', '103': 'dtls'}
-    provider = {'1001': 'Blacknut', '1002': 'Stadia', '1003': 'GeForceNow', '2001': 'Teams'}
+    provider = {'0': 'Unknown', '1': 'Youtube', '2': 'Netflix', '3': 'Facebook', '4': 'TikTok', '101': 'Prime Video',
+                '102': 'HBO', '103': 'Instagram', '104': 'Snapchat', '105': 'AppleTV+', '106': 'Disney+',
+                '107': 'TikTok Live', '108': 'Pluto TV', '109': 'CBS News', '110': 'Philo TV',
+                '1001': 'Blacknut', '1002': 'Stadia', '1003': 'GeForceNow', '1004': 'GamePass',
+                '2001': 'Teams', '2002': 'Meet', '2003': 'WhatsApp', '2004': 'Messanger', '2005': 'Skype',
+                '2006': 'Facetime', '2007': 'WebEx', '2008': "BlueJeans"}
     mType = {'1': 'Audio', '2': 'Video', '3': 'Sharing', '4': 'Data'}
 
     # Translate fields in human readable format
@@ -55,7 +60,7 @@ def combine_dat_files(pathIn, pathOut, type):
         pass
 
     timeField = ['startTime', 'endTime', 'gameStartTime', 'streamingStartTime', 'streamingEndTime',
-                 'sessionStartTime', 'sessionEndTime']
+                 'sessionStartTime', 'sessionEndTime', 'pWStartTime']
     for field in timeField:
         try:
             blob[field] = pd.to_datetime(blob[field], unit='ms')
